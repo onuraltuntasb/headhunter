@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HeadHunterModelStoreContainer" CdmEntityContainer="HeadHunterEntities">
+    <EntitySetMapping Name="Account">
+      <EntityTypeMapping TypeName="HeadHunterModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="AccountFlag" ColumnName="AccountFlag" />
+          <ScalarProperty Name="AccountFullName" ColumnName="AccountFullName" />
+          <ScalarProperty Name="AccountMail" ColumnName="AccountMail" />
+          <ScalarProperty Name="AccountStatus" ColumnName="AccountStatus" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AccountPassword">
+      <EntityTypeMapping TypeName="HeadHunterModel.AccountPassword">
+        <MappingFragment StoreEntitySet="AccountPassword">
+          <ScalarProperty Name="AccountPasswordId" ColumnName="AccountPasswordId" />
+          <ScalarProperty Name="AccountPasswordFlag" ColumnName="AccountPasswordFlag" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="AccountPassword1" ColumnName="AccountPassword1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaseDataType">
+      <EntityTypeMapping TypeName="HeadHunterModel.BaseDataType">
+        <MappingFragment StoreEntitySet="BaseDataType">
+          <ScalarProperty Name="BaseDataTypeId" ColumnName="BaseDataTypeId" />
+          <ScalarProperty Name="BaseDataTypeFlag" ColumnName="BaseDataTypeFlag" />
+          <ScalarProperty Name="BaseDataTypeName" ColumnName="BaseDataTypeName" />
+          <ScalarProperty Name="BaseDataTypeCode" ColumnName="BaseDataTypeCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profil">
+      <EntityTypeMapping TypeName="HeadHunterModel.Profil">
+        <MappingFragment StoreEntitySet="Profil">
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="ProfileFlag" ColumnName="ProfileFlag" />
+          <ScalarProperty Name="ProfileUsername" ColumnName="ProfileUsername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfileMeta">
+      <EntityTypeMapping TypeName="HeadHunterModel.ProfileMeta">
+        <MappingFragment StoreEntitySet="ProfileMeta">
+          <ScalarProperty Name="ProfileMetaId" ColumnName="ProfileMetaId" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="ProfilScanId" ColumnName="ProfilScanId" />
+          <ScalarProperty Name="SourceDataTypeId" ColumnName="SourceDataTypeId" />
+          <ScalarProperty Name="ProfileMetaValue" ColumnName="ProfileMetaValue" />
+          <ScalarProperty Name="ProfilMetaFlag" ColumnName="ProfilMetaFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfileScore">
+      <EntityTypeMapping TypeName="HeadHunterModel.ProfileScore">
+        <MappingFragment StoreEntitySet="ProfileScore">
+          <ScalarProperty Name="ProfileScoreId" ColumnName="ProfileScoreId" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="SourceDataTypeId" ColumnName="SourceDataTypeId" />
+          <ScalarProperty Name="ScoreValue" ColumnName="ScoreValue" />
+          <ScalarProperty Name="ProfileScoreFlag" ColumnName="ProfileScoreFlag" />
+          <ScalarProperty Name="ProfileScanId" ColumnName="ProfileScanId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfilScan">
+      <EntityTypeMapping TypeName="HeadHunterModel.ProfilScan">
+        <MappingFragment StoreEntitySet="ProfilScan">
+          <ScalarProperty Name="ProfilScanId" ColumnName="ProfilScanId" />
+          <ScalarProperty Name="ProfilScanDate" ColumnName="ProfilScanDate" />
+          <ScalarProperty Name="ProfilScanFlag" ColumnName="ProfilScanFlag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Source">
+      <EntityTypeMapping TypeName="HeadHunterModel.Source">
+        <MappingFragment StoreEntitySet="Source">
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="SourceFlag" ColumnName="SourceFlag" />
+          <ScalarProperty Name="SourceName" ColumnName="SourceName" />
+          <ScalarProperty Name="SourceUrl" ColumnName="SourceUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SourceDataType">
+      <EntityTypeMapping TypeName="HeadHunterModel.SourceDataType">
+        <MappingFragment StoreEntitySet="SourceDataType">
+          <ScalarProperty Name="SourceDataTypeId" ColumnName="SourceDataTypeId" />
+          <ScalarProperty Name="SourceDataTypeFlag" ColumnName="SourceDataTypeFlag" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+          <ScalarProperty Name="BasaDataTypeId" ColumnName="BasaDataTypeId" />
+          <ScalarProperty Name="SourceDataTypeName" ColumnName="SourceDataTypeName" />
+          <ScalarProperty Name="ScoreMultiple" ColumnName="ScoreMultiple" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HeadHunterModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewProfileProgramLanguage">
+      <EntityTypeMapping TypeName="HeadHunterModel.ViewProfileProgramLanguage">
+        <MappingFragment StoreEntitySet="ViewProfileProgramLanguage">
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="SourceDataTypeName" ColumnName="SourceDataTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewProgramLanguage">
+      <EntityTypeMapping TypeName="HeadHunterModel.ViewProgramLanguage">
+        <MappingFragment StoreEntitySet="ViewProgramLanguage">
+          <ScalarProperty Name="SourceDataTypeId" ColumnName="SourceDataTypeId" />
+          <ScalarProperty Name="SourceDataTypeName" ColumnName="SourceDataTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SelectProfileMeta" FunctionName="HeadHunterModel.Store.SelectProfileMeta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeadHunterModel.SelectProfileMeta_Result">
+          <ScalarProperty Name="ProfileMetaId" ColumnName="ProfileMetaId" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="ProfilScanId" ColumnName="ProfilScanId" />
+          <ScalarProperty Name="SourceDataTypeId" ColumnName="SourceDataTypeId" />
+          <ScalarProperty Name="ProfileMetaValue" ColumnName="ProfileMetaValue" />
+          <ScalarProperty Name="ProfilMetaFlag" ColumnName="ProfilMetaFlag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectProfileScore" FunctionName="HeadHunterModel.Store.SelectProfileScore">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeadHunterModel.SelectProfileScore_Result">
+          <ScalarProperty Name="ProfileScoreId" ColumnName="ProfileScoreId" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="SourceDataTypeId" ColumnName="SourceDataTypeId" />
+          <ScalarProperty Name="ScoreValue" ColumnName="ScoreValue" />
+          <ScalarProperty Name="ProfileScoreFlag" ColumnName="ProfileScoreFlag" />
+          <ScalarProperty Name="ProfileScanId" ColumnName="ProfileScanId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HeadHunterModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HeadHunterModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HeadHunterModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HeadHunterModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeadHunterModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HeadHunterModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeadHunterModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HeadHunterModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HeadHunterModel.Store.sp_upgraddiagrams" />
+    <EntitySetMapping Name="UserCount">
+      <EntityTypeMapping TypeName="HeadHunterModel.UserCount">
+        <MappingFragment StoreEntitySet="UserCount">
+          <ScalarProperty Name="CountId" ColumnName="CountId" />
+          <ScalarProperty Name="ProfileCount" ColumnName="ProfileCount" />
+          <ScalarProperty Name="SourceId" ColumnName="SourceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SelectProfileMetaByID2" FunctionName="HeadHunterModel.Store.SelectProfileMetaByID2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeadHunterModel.SelectProfileMetaByID2_Result">
+          <ScalarProperty Name="ProfileMetaId" ColumnName="ProfileMetaId" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="ProfilScanId" ColumnName="ProfilScanId" />
+          <ScalarProperty Name="SourceDataTypeId" ColumnName="SourceDataTypeId" />
+          <ScalarProperty Name="ProfileMetaValue" ColumnName="ProfileMetaValue" />
+          <ScalarProperty Name="ProfilMetaFlag" ColumnName="ProfilMetaFlag" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectProfileScoreByID2" FunctionName="HeadHunterModel.Store.SelectProfileScoreByID2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeadHunterModel.SelectProfileScoreByID2_Result">
+          <ScalarProperty Name="ProfileScoreId" ColumnName="ProfileScoreId" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="SourceDataTypeId" ColumnName="SourceDataTypeId" />
+          <ScalarProperty Name="ScoreValue" ColumnName="ScoreValue" />
+          <ScalarProperty Name="ProfileScoreFlag" ColumnName="ProfileScoreFlag" />
+          <ScalarProperty Name="ProfileScanId" ColumnName="ProfileScanId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectProfileScoreByID3" FunctionName="HeadHunterModel.Store.SelectProfileScoreByID3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HeadHunterModel.SelectProfileScoreByID3_Result">
+          <ScalarProperty Name="ProfileScoreId" ColumnName="ProfileScoreId" />
+          <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+          <ScalarProperty Name="SourceDataTypeId" ColumnName="SourceDataTypeId" />
+          <ScalarProperty Name="ScoreValue" ColumnName="ScoreValue" />
+          <ScalarProperty Name="ProfileScoreFlag" ColumnName="ProfileScoreFlag" />
+          <ScalarProperty Name="ProfileScanId" ColumnName="ProfileScanId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

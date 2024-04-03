@@ -1,0 +1,63 @@
+﻿@model HeadHunter.Models.UnifiedModels.LoginModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_LayoutWithLogin.cshtml";
+}
+
+    <div class="sidenav">
+        <div class="login-main-text">
+            <h2>Application<br> Login Page</h2>
+            <p>Login from here to access.</p>
+        </div>
+
+        <section id="loginForm">
+            <h2>@ViewBag.Msg</h2>
+            @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+
+                <fieldset class="col-md-4 col-md-offset-4">
+                    <legend>Log in Form</legend>
+                    <ol style="list-style:none">
+                        <li>
+                            <div class="form-group">
+                                <label>Email Address</label>
+
+                                @Html.TextBoxFor(m => m.Account.AccountMail, new { @class = "form-control input-sm" })
+                                @Html.ValidationMessageFor(m => m.Account.AccountMail)
+                            </div>
+                        </li>
+                        <li>
+                            <label>Password</label>
+                            @Html.PasswordFor(m => m.AccountPassword.AccountPassword1, new { @class = "form-control input-sm" })
+                            @Html.ValidationMessageFor(m => m.AccountPassword.AccountPassword1)
+                        </li>
+                    </ol>
+                    <input type="submit" value="Log in" class="btn btn-info btn-primary" />
+                </fieldset>
+                <p>
+                </p>
+            }
+        </section>
+        <br />
+    </div>
+
+
+
+<style>
+    body {
+        background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    }
+    .sidenav {
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius:5px;
+    overflow-x: hidden;
+    padding-top: 20px;
+     padding-bottom: 20px;
+    text-align:center;
+ 
+}
+</style>

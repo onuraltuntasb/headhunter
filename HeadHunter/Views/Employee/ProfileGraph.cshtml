@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "ProfileGraph";
+    Layout = "~/Views/Shared/_LayoutWithoutLogin.cshtml";
+}
+
+@model HeadHunter.Models.UnifiedModels.SalesChartModel
+
+<!DOCTYPE html>
+
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>StackIndex</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </head>
+    <body>
+        <div>
+            <div id="chart" style="width: 800; height: 500px;"></div>
+            <script type="text/javascript">
+            google.charts.load('current', { 'packages': ['corechart', 'bar'] });
+
+            google.charts.setOnLoadCallback(function () {
+                var title = '@Model.Title';
+                var subtitle = '@Model.Subtitle';
+                var dataTable = new google.visualization.DataTable(
+                    @Html.Raw(Json.Encode(Model.DataTable))
+                );
+
+                drawBarChart('chart', title, subtitle, dataTable);
+                //drawColumnChart('chart', title, dataTable);
+            });
+
+            function drawBarChart(elementId, title, subtitle, dataTable) {
+                var options = {
+                    chart: {
+                        title: title,
+                        subtitle: subtitle
+                    }
+                };
+                var chart = new google.charts.Bar(document.getElementById(elementId));
+                chart.draw(dataTable, options);
+            }
+
+            function drawColumnChart(elementId, title, dataTable) {
+                var options = {
+                    title: title
+                };
+                var chart = new google.visualization.ColumnChart(document.getElementById(elementId));
+                chart.draw(dataTable, options);
+            }
+
+            </script>
+           
+
+            
+
+
+        </div>
+
+        <div id="shareSpace" style="width: 100px; height: 50px;"></div>
+
+        <a href="#"
+           onclick="
+     window.open(
+     'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+     'facebook-share-dialog',
+     'width=626,height=436');
+     return false;">
+            <i class="fa fa-facebook"></i>Paylaş
+        </a>
+
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-size="large" data-count="none"></a>
+        <script>
+            !function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) {
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, "script", "twitter-wjs");
+        </script>
+
+
+
+
+        <div>
+            @ViewBag.Dil <br />
+        </div>
+
+
+
+    </body>
+</html>
+
+<style>
+
+    body {
+        background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    }
+</style>
+

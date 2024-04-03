@@ -1,0 +1,40 @@
+﻿@model HeadHunter.Models.Entity.Account
+@{
+    ViewBag.Title = "SendMail";
+    Layout = "~/Views/Shared/_LayoutWithoutLogin.cshtml";
+}
+
+<h1>Send mail</h1>
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<body>
+    <div class="form-group">
+        <p class="alert-success">Mail Sent Successfully</p>
+
+        <a href="/Employer/Search/" class="btn btn-success">Ok</a>
+    </div>
+
+
+
+    @using (Html.BeginForm("SendMail", "Employer", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.AccountFullName)
+            @Html.TextBox("Text")
+            <br />
+            <input type="submit" value="Send Parameter" />
+        </div>
+
+    }
+
+</body>
+</html>
+
+<style>
+
+    body {
+        background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    }
+</style>

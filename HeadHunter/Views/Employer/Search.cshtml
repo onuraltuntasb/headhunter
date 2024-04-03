@@ -1,0 +1,104 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_LayoutWithoutLogin.cshtml";
+}
+
+<html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<head>
+
+</head>
+
+<body>
+    <header>
+    </header>
+   
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col=12 mt-3">
+                    <div class="jumbotron ">
+                        <h2 class="display-4">Select Language or Languages!</h2>
+                        @using (Html.BeginForm("Search", "Employer"))
+                        {
+                            var db = new HeadHunter.Models.Entity.HeadHunterEntities();
+                            foreach (var item in db.ViewProgramLanguage)
+                            {
+                                <div>
+
+                                    @Html.CheckBox("PL_" + item.SourceDataTypeName, new { value = item.SourceDataTypeName })
+                                    @Html.Label(item.SourceDataTypeName)
+
+                                </div>
+
+                            }
+
+
+
+                            <input type="submit" value="Search" class="btn btn-info btn-primary" />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            var db_ = new HeadHunter.Models.Entity.HeadHunterEntities();
+
+
+                            if (ViewBag.ProfileList != null)
+                            {
+                                @Html.Raw("<table>");
+                                @Html.Raw("<tr><td><b>ProfileName</b></td></tr>");
+
+                                var profileList = (List<HeadHunter.Models.Entity.Profil>)ViewBag.ProfileList;
+                                foreach (var profile in profileList)
+                                {
+                                    var accountProfile = db_.Account.FirstOrDefault(m => m.AccountId == profile.AccountId);
+                                    <div class="form-group">
+                                        @Html.Raw("<tr>")
+                                        @Html.Raw(@"<td><a target=""_blank"" href=""/Employee/Profile/" + profile.ProfileId + @""">" + profile.ProfileUsername + "</a>  </td>")
+                                        <td><a href="/Employer/SendMail/@profile.AccountId" class="btn btn-success">Send Mail</a></td>
+                                        @*<td><a href="/ExportToExcel/ExporttoExcel/" class="btn btn-info">XML Export</a></td>*@
+
+                                        @Html.Raw("</tr>")
+                                    </div>
+                                }
+                                @Html.Raw("</table>");
+                            }
+
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+</body>
+
+</html>
+
+<style>
+
+    body {
+        background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

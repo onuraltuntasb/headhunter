@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HeadHunterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountFlag" Type="tinyint" />
+    <Property Name="AccountFullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountMail" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountStatus" Type="date" />
+    <Property Name="AccountType" Type="bit" />
+  </EntityType>
+  <EntityType Name="AccountPassword">
+    <Key>
+      <PropertyRef Name="AccountPasswordId" />
+    </Key>
+    <Property Name="AccountPasswordId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountPasswordFlag" Type="bit" />
+    <Property Name="AccountId" Type="int" />
+    <Property Name="AccountPassword1" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BaseDataType">
+    <Key>
+      <PropertyRef Name="BaseDataTypeId" />
+    </Key>
+    <Property Name="BaseDataTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BaseDataTypeFlag" Type="bit" />
+    <Property Name="BaseDataTypeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BaseDataTypeCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Profil">
+    <Key>
+      <PropertyRef Name="ProfileId" />
+    </Key>
+    <Property Name="ProfileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SourceId" Type="int" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+    <Property Name="ProfileFlag" Type="bit" />
+    <Property Name="ProfileUsername" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProfileMeta">
+    <Key>
+      <PropertyRef Name="ProfileMetaId" />
+    </Key>
+    <Property Name="ProfileMetaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProfileId" Type="int" />
+    <Property Name="ProfilScanId" Type="int" />
+    <Property Name="SourceDataTypeId" Type="int" />
+    <Property Name="ProfileMetaValue" Type="nvarchar" MaxLength="500" />
+    <Property Name="ProfilMetaFlag" Type="bit" />
+  </EntityType>
+  <EntityType Name="ProfileScore">
+    <Key>
+      <PropertyRef Name="ProfileScoreId" />
+    </Key>
+    <Property Name="ProfileScoreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProfileId" Type="int" />
+    <Property Name="SourceDataTypeId" Type="int" />
+    <Property Name="ScoreValue" Type="float" />
+    <Property Name="ProfileScoreFlag" Type="bit" />
+    <Property Name="ProfileScanId" Type="int" />
+  </EntityType>
+  <EntityType Name="ProfilScan">
+    <Key>
+      <PropertyRef Name="ProfilScanId" />
+    </Key>
+    <Property Name="ProfilScanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProfilScanDate" Type="smalldatetime" />
+    <Property Name="ProfilScanFlag" Type="bit" />
+  </EntityType>
+  <EntityType Name="Source">
+    <Key>
+      <PropertyRef Name="SourceId" />
+    </Key>
+    <Property Name="SourceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SourceFlag" Type="bit" />
+    <Property Name="SourceName" Type="nvarchar" MaxLength="150" />
+    <Property Name="SourceUrl" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="SourceDataType">
+    <Key>
+      <PropertyRef Name="SourceDataTypeId" />
+    </Key>
+    <Property Name="SourceDataTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SourceDataTypeFlag" Type="bit" />
+    <Property Name="SourceId" Type="int" />
+    <Property Name="BasaDataTypeId" Type="int" />
+    <Property Name="SourceDataTypeName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ScoreMultiple" Type="float" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserCount">
+    <Key>
+      <PropertyRef Name="CountId" />
+    </Key>
+    <Property Name="SourceId" Type="int" Nullable="false" />
+    <Property Name="ProfileCount" Type="float" />
+    <Property Name="CountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HeadHunter.dbo.ViewProfileProgramLanguage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewProfileProgramLanguage">
+    <Key>
+      <PropertyRef Name="ProfileId" />
+    </Key>
+    <Property Name="ProfileId" Type="int" Nullable="false" />
+    <Property Name="SourceDataTypeName" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'HeadHunter.dbo.ViewProgramLanguage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewProgramLanguage">
+    <Key>
+      <PropertyRef Name="SourceDataTypeId" />
+    </Key>
+    <Property Name="SourceDataTypeId" Type="int" Nullable="false" />
+    <Property Name="SourceDataTypeName" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK_AccountPassword_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="AccountPassword" Type="Self.AccountPassword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="AccountPassword">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Profil_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="Profil" Type="Self.Profil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="AccountId" />
+      </Principal>
+      <Dependent Role="Profil">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Profil_Source">
+    <End Role="Source" Type="Self.Source" Multiplicity="1" />
+    <End Role="Profil" Type="Self.Profil" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Source">
+        <PropertyRef Name="SourceId" />
+      </Principal>
+      <Dependent Role="Profil">
+        <PropertyRef Name="SourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileMeta_Profil">
+    <End Role="Profil" Type="Self.Profil" Multiplicity="0..1" />
+    <End Role="ProfileMeta" Type="Self.ProfileMeta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profil">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="ProfileMeta">
+        <PropertyRef Name="ProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileMeta_ProfilScan">
+    <End Role="ProfilScan" Type="Self.ProfilScan" Multiplicity="0..1" />
+    <End Role="ProfileMeta" Type="Self.ProfileMeta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfilScan">
+        <PropertyRef Name="ProfilScanId" />
+      </Principal>
+      <Dependent Role="ProfileMeta">
+        <PropertyRef Name="ProfilScanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileMeta_SourceDataType">
+    <End Role="SourceDataType" Type="Self.SourceDataType" Multiplicity="0..1" />
+    <End Role="ProfileMeta" Type="Self.ProfileMeta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SourceDataType">
+        <PropertyRef Name="SourceDataTypeId" />
+      </Principal>
+      <Dependent Role="ProfileMeta">
+        <PropertyRef Name="SourceDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileScore_Profil">
+    <End Role="Profil" Type="Self.Profil" Multiplicity="0..1" />
+    <End Role="ProfileScore" Type="Self.ProfileScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profil">
+        <PropertyRef Name="ProfileId" />
+      </Principal>
+      <Dependent Role="ProfileScore">
+        <PropertyRef Name="ProfileId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileScore_ProfilScan">
+    <End Role="ProfilScan" Type="Self.ProfilScan" Multiplicity="0..1" />
+    <End Role="ProfileScore" Type="Self.ProfileScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProfilScan">
+        <PropertyRef Name="ProfilScanId" />
+      </Principal>
+      <Dependent Role="ProfileScore">
+        <PropertyRef Name="ProfileScanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfileScore_SourceDataType">
+    <End Role="SourceDataType" Type="Self.SourceDataType" Multiplicity="0..1" />
+    <End Role="ProfileScore" Type="Self.ProfileScore" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SourceDataType">
+        <PropertyRef Name="SourceDataTypeId" />
+      </Principal>
+      <Dependent Role="ProfileScore">
+        <PropertyRef Name="SourceDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SourceDataType_BaseDataType">
+    <End Role="BaseDataType" Type="Self.BaseDataType" Multiplicity="0..1" />
+    <End Role="SourceDataType" Type="Self.SourceDataType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaseDataType">
+        <PropertyRef Name="BaseDataTypeId" />
+      </Principal>
+      <Dependent Role="SourceDataType">
+        <PropertyRef Name="BasaDataTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SourceDataType_Source">
+    <End Role="Source" Type="Self.Source" Multiplicity="0..1" />
+    <End Role="SourceDataType" Type="Self.SourceDataType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Source">
+        <PropertyRef Name="SourceId" />
+      </Principal>
+      <Dependent Role="SourceDataType">
+        <PropertyRef Name="SourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="SelectProfileMeta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProfileID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SelectProfileMetaByID2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProfileID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SelectProfileScore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProfileID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SelectProfileScoreByID2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProfileID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SelectProfileScoreByID3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ProfileID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="HeadHunterModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AccountPassword" EntityType="Self.AccountPassword" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BaseDataType" EntityType="Self.BaseDataType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profil" EntityType="Self.Profil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProfileMeta" EntityType="Self.ProfileMeta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProfileScore" EntityType="Self.ProfileScore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProfilScan" EntityType="Self.ProfilScan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Source" EntityType="Self.Source" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SourceDataType" EntityType="Self.SourceDataType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserCount" EntityType="Self.UserCount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViewProfileProgramLanguage" EntityType="Self.ViewProfileProgramLanguage" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewProfileProgramLanguage].[ProfileId] AS [ProfileId], 
+    [ViewProfileProgramLanguage].[SourceDataTypeName] AS [SourceDataTypeName]
+    FROM [dbo].[ViewProfileProgramLanguage] AS [ViewProfileProgramLanguage]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewProgramLanguage" EntityType="Self.ViewProgramLanguage" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewProgramLanguage].[SourceDataTypeId] AS [SourceDataTypeId], 
+    [ViewProgramLanguage].[SourceDataTypeName] AS [SourceDataTypeName]
+    FROM [dbo].[ViewProgramLanguage] AS [ViewProgramLanguage]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AccountPassword_Account" Association="Self.FK_AccountPassword_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="AccountPassword" EntitySet="AccountPassword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Profil_Account" Association="Self.FK_Profil_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Profil" EntitySet="Profil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Profil_Source" Association="Self.FK_Profil_Source">
+      <End Role="Source" EntitySet="Source" />
+      <End Role="Profil" EntitySet="Profil" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileMeta_Profil" Association="Self.FK_ProfileMeta_Profil">
+      <End Role="Profil" EntitySet="Profil" />
+      <End Role="ProfileMeta" EntitySet="ProfileMeta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileMeta_ProfilScan" Association="Self.FK_ProfileMeta_ProfilScan">
+      <End Role="ProfilScan" EntitySet="ProfilScan" />
+      <End Role="ProfileMeta" EntitySet="ProfileMeta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileMeta_SourceDataType" Association="Self.FK_ProfileMeta_SourceDataType">
+      <End Role="SourceDataType" EntitySet="SourceDataType" />
+      <End Role="ProfileMeta" EntitySet="ProfileMeta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileScore_Profil" Association="Self.FK_ProfileScore_Profil">
+      <End Role="Profil" EntitySet="Profil" />
+      <End Role="ProfileScore" EntitySet="ProfileScore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileScore_ProfilScan" Association="Self.FK_ProfileScore_ProfilScan">
+      <End Role="ProfilScan" EntitySet="ProfilScan" />
+      <End Role="ProfileScore" EntitySet="ProfileScore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfileScore_SourceDataType" Association="Self.FK_ProfileScore_SourceDataType">
+      <End Role="SourceDataType" EntitySet="SourceDataType" />
+      <End Role="ProfileScore" EntitySet="ProfileScore" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SourceDataType_BaseDataType" Association="Self.FK_SourceDataType_BaseDataType">
+      <End Role="BaseDataType" EntitySet="BaseDataType" />
+      <End Role="SourceDataType" EntitySet="SourceDataType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SourceDataType_Source" Association="Self.FK_SourceDataType_Source">
+      <End Role="Source" EntitySet="Source" />
+      <End Role="SourceDataType" EntitySet="SourceDataType" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

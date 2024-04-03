@@ -1,7 +1,7 @@
 
 # HeadHunder
 
-> You can find employee with HeadHunter easily.
+> You can find employee with headhunter easily.
 
 > You can see github and stackoverflow profiles saved users.
 
@@ -18,7 +18,7 @@
 
 ### Clone
 
-- Clone this repo to your local machine using <a href="https://github.com/OnurAltuntas/HeadHunter.git" target="_blank">`https://github.com/OnurAltuntas/HeadHunter.git`</a>
+- Clone this repo to your local machine using <a href="https://github.com/onuraltuntasb/headhunter.git" target="_blank">`https://github.com/onuraltuntasb/headhunter.git`</a>
 
 ### Setup
 
@@ -38,7 +38,7 @@ update and install this package first
     - 🍴 Fork this repo!
 
 - **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/OnurAltuntas/HeadHunter.git`
+    - 👯 Clone this repo to your local machine using `https://github.com/onuraltuntasb/headhunter.git`
 
 ### Step 2
 
@@ -46,25 +46,14 @@ update and install this package first
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/OnurAltuntas/HeadHunter.git/pulls" target="_blank">`https://github.com/OnurAltuntas/HeadHunter.git/pulls`</a>.
-
----
-
-## Team
-
-> Or Contributors/People
-
- <a href="https://onuraltuntasdev.netlify.app/" target="_blank">**OnurAltuntasDev**</a> 
- | [![OnurAltuntas](https://avatars0.githubusercontent.com/u/53194850?s=460&u=88ff0b9c8fe41c908d3c9b7ff43eb00dba669e66&v=4)](https://onuraltuntasdev.netlify.app)  |
----
+- 🔃 Create a new pull request using <a href="https://github.com/onuraltuntasb/headhunter.git/pulls" target="_blank">`https://github.com/onuraltuntasb/headhunter.git/pulls`</a>.
 
 ## Support
 
 Reach out to me at one of the following places!
 
-- Website at <a href="https://onuraltuntasdev.netlify.app/" target="_blank">`onuraltuntasdev.com`</a>
-- Twitter at <a href="http://twitter.com/onuraltuntasdev" target="_blank">`@onuraltuntasdev`</a>
-- Youtube at <a href="https://www.youtube.com/channel/UCalJQ45NyMzMvPqK5n0xYEA" target="_blank">`@onuraltuntasdev`</a>
+- Website at <a href="https://onuraltuntasb.github.io/personal-website/" target="_blank">`https://onuraltuntasb.github.io/personal-website/`</a>
+
 ---
 
 
